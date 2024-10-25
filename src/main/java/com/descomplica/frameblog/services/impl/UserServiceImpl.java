@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService {
         User entity = new User(newUser.getName(), newUser.getEmail(), passwordHash,
                 newUser.getUsername(), newUser.getRole());
 
+        return entity;
     }
 
     @Override
@@ -55,6 +56,7 @@ public class UserServiceImpl implements UserService {
             userUpdate.setUsername(userUpdate.getUsername());
             return userRepository.save(userUpdate);
         }
+        return null;
     }
 
     @Override
